@@ -9,7 +9,7 @@ if 'name' not in st.session_state:
 
 image_name = ''
 st.title("Mango Leaf Classifier")
-image = st.image(image='Yotsuba_Nakano_FULL_BODY.webp',caption='uploaded image')
+image = st.image(image='mango.png',caption='uploaded image')
 uploaded_file = st.file_uploader("Choose a file")
 
 if uploaded_file is not None:
@@ -34,6 +34,13 @@ if st.session_state.name != "":
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
+
+if st.session_state.name != "": 
+    mango_disease = st.session_state.name
+    temp_prompt = f"I have a mango crop with {mango_disease} how should I treat it, and what could be causing the diseases"
+    st.session_state.messages.append({"role": "user", "content": temp_prompt})
+    with st.chat_message("user"):
+        st.write(temp_prompt)
 
 if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
