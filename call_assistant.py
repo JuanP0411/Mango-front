@@ -48,5 +48,4 @@ def call_openai(mango_disease):
      messages = client.beta.threads.messages.list(thread_id=thread.id)
      message_dictionary = messages.json()
      message_json = json.loads(message_dictionary)
-     print(message_json["data"][0]["content"][0]["text"]["value"])
      return message_json["data"][0]["content"][0]["text"]["value"]
