@@ -9,6 +9,7 @@ if 'name' not in st.session_state:
 
 image_name = ''
 st.title("Mango Leaf Classifier")
+
 image = st.image(image='mango.png',caption='uploaded image')
 uploaded_file = st.file_uploader("Choose a file")
 
@@ -66,3 +67,6 @@ if st.session_state.messages[-1]["role"] != "assistant":
             placeholder.markdown(full_response)
     message = {"role": "assistant", "content": full_response}
     st.session_state.messages.append(message)
+
+
+st.caption('Created by Marco Fidel Casto, and Juan Pablo Herrera')
