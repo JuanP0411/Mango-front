@@ -69,4 +69,4 @@ if st.session_state.messages[-1]["role"] != "assistant":
     st.session_state.messages.append(message)
 
 
-st.caption('Created by Marco Fidel Vasquez, and Juan Pablo Herrera')
+st.caption('Created by Marco Fidel Vásquez, and Juan Pablo Herrera')
